@@ -98,11 +98,19 @@ var SteamTube = function() {
 		window.open(url);
 	};
 
+	/**
+	 * Hide link
+	 * @return void
+	 */
 	var hideButton = function()
 	{
 		button.hide();
 	};
 
+	/**
+	 * Show link
+	 * @return void
+	 */
 	var showButton = function()
 	{
 		button.fadeIn(1000);
