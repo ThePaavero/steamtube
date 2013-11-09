@@ -1,0 +1,15 @@
+{
+	"name"             : "SteamTube",
+	"version"          : "1.0",
+	"manifest_version" : 2,
+	"description"      : "Add a button to Steam's store that links to that game's search on YouTube.",
+	"content_scripts"  : [
+		{
+			"matches" : ["http://store.steampowered.com/app/*"],
+			"js"      : ["js/jquery.js", "js/SteamTube.js"]
+		}
+	],
+	"permissions" : [
+		"http://store.steampowered.com/"
+	]
+}
