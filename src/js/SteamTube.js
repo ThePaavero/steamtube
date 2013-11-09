@@ -24,7 +24,9 @@ var SteamTube = function() {
 		findOutGameName();
 		createButton();
 		styleButton();
+		hideButton();
 		doButtonListener();
+		showButton();
 	};
 
 	// -----------------------------------------------------------------------
@@ -63,7 +65,8 @@ var SteamTube = function() {
 			'padding'    : 10,
 			'font-size'  : '11px',
 			'color'      : '#000',
-			'font-family': 'Arial'
+			'font-family': 'Arial',
+			'box-shadow' : '0px 2px 5px 2px #000'
 		});
 	};
 
@@ -93,6 +96,16 @@ var SteamTube = function() {
 		var url = 'http://www.youtube.com/results?search_query=' + q;
 
 		window.open(url);
+	};
+
+	var hideButton = function()
+	{
+		button.hide();
+	};
+
+	var showButton = function()
+	{
+		button.fadeIn(1000);
 	};
 
 };
