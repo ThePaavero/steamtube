@@ -92,7 +92,7 @@ var SteamTube = function() {
 	var doOnClick = function()
 	{
 		// Search query string
-		var q = game_name + ' ' + platform + ' gameplay';
+		var q = encodeURIComponent(game_name + ' ' + platform + ' gameplay');
 
 		// URL to open
 		var url = 'http://www.youtube.com/results?search_query=' + q;
@@ -129,7 +129,7 @@ var SteamTube = function() {
 		$('body').prepend('<a href="#" id="review_button">Search reviews</a>');
 
 		review_button = $('#review_button');
-		var q         = game_name + ' ' + platform + ' review';
+		var q         = encodeURIComponent(game_name + ' ' + platform + ' review');
 		var url       = 'https://www.google.fi/search?q=' + q;
 
 		review_button.css({
