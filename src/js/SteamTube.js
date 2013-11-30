@@ -13,6 +13,7 @@ var SteamTube = function() {
 	var platform = 'pc';
 
 	var button;
+	var review_button;
 	var game_name = '';
 
 	/**
@@ -23,10 +24,11 @@ var SteamTube = function() {
 	{
 		findOutGameName();
 		createButton();
+		createReviewButton();
 		styleButton();
-		hideButton();
+		hideButtons();
 		doButtonListener();
-		showButton();
+		showButtons();
 	};
 
 	// -----------------------------------------------------------------------
@@ -102,18 +104,55 @@ var SteamTube = function() {
 	 * Hide link
 	 * @return void
 	 */
-	var hideButton = function()
+	var hideButtons = function()
 	{
 		button.hide();
+		review_button.hide();
 	};
 
 	/**
 	 * Show link
 	 * @return void
 	 */
-	var showButton = function()
+	var showButtons = function()
 	{
 		button.fadeIn(1000);
+		review_button.fadeIn(1000);
+	};
+
+	/**
+	 * Create review button, style it and attach click listener
+	 * @return void
+	 */
+	var createReviewButton = function()
+	{
+		$('body').prepend('<a href="#" id="review_button">Search reviews</a>');
+
+		review_button = $('#review_button');
+		var q         = game_name + ' ' + platform + ' review';
+		var url       = 'https://www.google.fi/search?q=' + q;
+
+		review_button.css({
+			'width'      : 102,
+			'position'   : 'absolute',
+			'top'        : 60,
+			'left'       : 10,
+			'display'    : 'inline-block',
+			'background' : '#fff',
+			'line-height': '35px',
+			'height'     : 35,
+			'text-align' : 'center',
+			'font-size'  : '11px',
+			'color'      : '#000',
+			'font-family': 'Arial',
+			'box-shadow' : '0px 2px 5px 2px #000'
+		});
+
+		review_button.click(function()
+		{
+			window.open(url);
+			return false;
+		});
 	};
 
 };

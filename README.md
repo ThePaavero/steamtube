@@ -1,6 +1,8 @@
 SteamTube
 =============
 
-(Chrome extension) Add a simple "Search YouTube" link to app page. Searches for "[GAME TITLE] pc gameplay".
+(Chrome extension) Add a simple "Search YouTube" link to app page.Searches for "[GAME TITLE] pc gameplay".
 
 ![Screenshot](http://i.imgur.com/A2BlEqh.png "Screenshot")
+
+UPDATE: Now also adds a review link button.
